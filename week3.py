@@ -4,6 +4,18 @@ If the discount is 20% or higher, apply the discount; otherwise, return the orig
 def calculate_discount(price, discount_percent):
     if discount_percent >= 20:
         final_price = price * (1 - discount_percent / 100)
-        return final_price
+        return final_price;
     else:
-        return price
+        return price;
+"""Using the calculate_discount function, prompt the user to enter the original price of an item and the discount percentage.
+Print the final price after applying the discount, or if no discount was applied, print the original price."""
+def main():
+        price = float(input("Enter the original price of the item: "))
+        discount_percent = float(input("Enter the discount percentage: "))
+        
+        final_price = calculate_discount(price, discount_percent)
+        
+        if final_price < price:
+            print(f"The final price after applying the discount is: ${final_price:.2f}")
+        else:
+            print(f"No discount applied. The original price is: ${price:.2f}")  
